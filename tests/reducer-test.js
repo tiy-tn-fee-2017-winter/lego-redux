@@ -67,3 +67,21 @@ module('Lego Reducer: LEGO@ADD', () => {
     assert.deepEqual(reducer(startingState, action), expectedResult);
   });
 });
+
+module('Lego Reducer: LEGO@ADD', () => {
+  test('remove a red 1x1 by itself', (assert) => {
+    const startingState = [{ id: 1, color: 'red', shape: '1x1' }];
+    const action = { type: 'LEGO@REMOVE', id: 1 };
+    const expectedResult = [];
+
+    assert.deepEqual(reducer(startingState, action), expectedResult);
+  });
+
+  test('remove a green 2x2 by itself', (assert) => {
+    const startingState = [{ id: 8, color: 'green', shape: '2x2' }];
+    const action = { type: 'LEGO@REMOVE', id: 8 };
+    const expectedResult = [];
+
+    assert.deepEqual(reducer(startingState, action), expectedResult);
+  });
+});
